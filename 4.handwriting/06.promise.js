@@ -160,9 +160,10 @@ Promise.prototype.finally = function (callback) {
 // 
 Promise.resolve(456).finally(()=>{
     return new Promise((resolve,reject)=>{
-        setTimeout(() => {
-            resolve()
-        }, 3000);
+        // setTimeout(() => {
+            resolve(123)
+            reject(123)
+        // }, 3000);
     })
 }).then(data=>{
     console.log(data,'success')

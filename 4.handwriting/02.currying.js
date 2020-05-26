@@ -16,18 +16,20 @@ const currying = (fn, arr = []) => {
     let len = fn.length; // 这里获取的是函数的参数的个数
     return function(...args) { // 高阶函数
         let concatValue = [...arr, ...args];
-        if (a.length < len) {
+        console.log('concatValue'+concatValue,concatValue.length,concatValue.length < len)
+        if (concatValue.length < len) {
             return currying(fn, concatValue); // 递归不停的产生函数
         } else {
-            return fn(...a);
+            return fn(...concatValue);
         }
     }
 }
 let isArray = currying(isType)('Array') // bind
+// console.log(isArray)
 let isString = currying(isType)('String')
-console.log(isArray([]));
-console.log(isArray('string')); // 这里拼接了
-console.log(isArray([])); 
+// console.log(isArray([]));
+// console.log(isArray('string')); // 这里拼接了
+// console.log(isArray([])); 
 // 第一次我们传入了一个数组
 
 // function sum(a,b,c,d,e,f){
