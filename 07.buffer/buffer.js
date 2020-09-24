@@ -44,3 +44,19 @@ console.log(newBuffer)
 console.log(Buffer.isBuffer(newBuffer))
 
 // Buffer 没有改变buffer本身的方法
+
+
+const buffer = Buffer.from([1,2,3])
+console.log(buffer);
+let newBuffer = buffer.slice(0,1);
+console.log(newBuffer);
+console.log(buffer);
+newBuffer[0] = 100;
+console.log(newBuffer);
+console.log(buffer);
+// buffer字节是内存相当于对象引用类型
+
+arr = [{a:1},2,3];
+newArr = arr.slice(0,1);
+newArr[0].a = 100;
+console.log(arr,newArr)
