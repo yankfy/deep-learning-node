@@ -21,3 +21,7 @@ server.on('error',()=>{
 server.on('close',()=>{
     console.log(`server close`);
 })
+
+server.on('listening',()=>{
+    console.log('aaa')
+})
